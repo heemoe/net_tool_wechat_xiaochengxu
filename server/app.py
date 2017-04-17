@@ -24,8 +24,13 @@ def get_net_tool(type, keyword):
 def data_from_type(cmd, kwd):
     cmds = [cmd, kwd]
     if cmd == "ping":
-        cmd = [cmd, "-c", "3", kwd]
-    value = subprocess.run(cmds, stdout=subprocess.PIPE).stdout
+        cmds = [cmd, "-c", "3", kwd]
+    # value = subprocess.run(cmds, stdout=subprocess.PIPE).stdout
+    print(cmds)
+    proc = subprocess.Popen(cmds, stdout=subprocess.PIPE)
+    value = ''
+    for line in proc.stdout:
+        value += str(line.rstrip()).format() + '<br>'
     print(value)
     return value
 
