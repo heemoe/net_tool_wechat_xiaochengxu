@@ -7,21 +7,6 @@ import subprocess
 
 app = Flask(__name__)
 
-tasks = [
-    {
-        'id': 1,
-        'title': 'Buy groceries',
-        'description': 'Milk, Cheese, Pizza, Fruit, Tylenol',
-        'done': False
-    },
-    {
-        'id': 2,
-        'title': 'Learn Python',
-        'description': 'Need to find a good Python tutorial on the web',
-        'done': False
-    }
-]
-
 
 @app.route('/api/v1.0/nettool/<path:type>/<path:keyword>', methods=['GET'])
 def get_net_tool(type, keyword):
@@ -37,7 +22,11 @@ def get_net_tool(type, keyword):
 
 
 def data_from_type(cmd, kwd):
-    value = subprocess.run(['ls'], stdout=subprocess.PIPE).stdout
+    if cmd == "ping":
+        value = subprocess.run([cmd, "-c", "3", kwd],
+                               stdout=subprocess.PIPE).stdout
+        return value
+    value = subprocess.run([cmd, kwd], stdout=subprocess.PIPE).stdout
     print(value)
     return value
 
