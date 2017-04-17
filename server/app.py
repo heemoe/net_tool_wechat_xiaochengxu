@@ -22,11 +22,10 @@ def get_net_tool(type, keyword):
 
 
 def data_from_type(cmd, kwd):
+    cmds = [cmd, kwd]
     if cmd == "ping":
-        value = subprocess.run([cmd, "-c", "3", kwd],
-                               stdout=subprocess.PIPE).stdout
-        return value
-    value = subprocess.run([cmd, kwd], stdout=subprocess.PIPE).stdout
+        cmd = [cmd, "-c", "3", kwd]
+    value = subprocess.run(cmds, stdout=subprocess.PIPE).stdout
     print(value)
     return value
 
