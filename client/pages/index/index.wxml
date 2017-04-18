@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="view">
+  <view class="view-center">
+  <image class="head_img" src="../../source/icon.png"></image>
+  </view>
+  <view class="view-center kwd_view">
+  <input class="kwd_view_input" type="text" focus="{{focus}}" placeholder="输入你要查询的URL" />
+  </view>
+  <view class="buttons">
+  <button class="button" type="primary">ping</button>
+  <button class="button" type="primary">dig</button>
+  <button class="button" type="primary">whois</button>
+  <button class="button" type="primary">ip</button>
+  <button class="button" type="primary">about</button>
+  </view>
+</view>
