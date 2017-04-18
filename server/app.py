@@ -13,7 +13,7 @@ def get_net_tool(type, keyword):
     # print(request.args.get('summary'))
     # print(request.args.get('charge'))
     print(type + keyword)
-    if type == "dig" or type == "whois" or type == "ping" and keyword:
+    if type == "dig" or type == "whois" or type == "ping" and keyword and "." in keyword:
         value = data_from_type(type, keyword)
         return value
     else:
