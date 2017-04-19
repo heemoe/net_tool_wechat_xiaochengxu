@@ -4,13 +4,13 @@
   <image class="head_img" src="../../source/icon.png"></image>
   </view>
   <view class="view-center kwd_view">
-  <input class="kwd_view_input" type="text" focus="{{focus}}" placeholder="输入你要查询的URL" />
+  <input class="kwd_view_input" type="text" focus="{{focus}}" placeholder="{{input_placeholder}}" bindblur="endInputting" />
   </view>
   <view class="buttons">
-  <button class="button" type="primary">ping</button>
-  <button class="button" type="primary">dig</button>
-  <button class="button" type="primary">whois</button>
-  <button class="button" type="primary">ip</button>
-  <button class="button" type="primary">about</button>
+  <button class="button" type="primary" bindtap="pingBtnClick">ping</button>
+  <button class="button" type="primary" bindtap="digBtnClick">dig</button>
+  <button class="button" type="primary" bindtap="whoisBtnClick">whois</button>
+  <button class="button" type="primary" bindtap="ipBtnClick">ip</button>
+  <button class="button" type="primary" bindtap="ipv6BtnClick">ip-6</button>
   </view>
 </view>

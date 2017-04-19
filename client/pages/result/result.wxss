@@ -1,0 +1,7 @@
+.result_view {
+    margin: 200px,200px,200px,200px
+}
+.result_content_label {
+    margin-top: 60px;
+    color: lightgrey;
+}

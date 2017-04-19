@@ -1,0 +1,3 @@
+<view class="result_view">
+<text class="result_content_label">{{result}}</text>
+</view>
