@@ -36,4 +36,4 @@ def data_from_type(cmd, kwd):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=80)
