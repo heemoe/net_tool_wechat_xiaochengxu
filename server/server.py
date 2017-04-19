@@ -8,6 +8,11 @@ import subprocess
 app = Flask(__name__)
 
 
+@app.route('/', methods=['GET'])
+def get_home():
+    return "<h1 style='color:blue'>Hello World!</h1>"
+
+
 @app.route('/api/v1.0/nettool/<path:type>/<path:keyword>', methods=['GET'])
 def get_net_tool(type, keyword):
     # print(request.args.get('summary'))
@@ -33,7 +38,3 @@ def data_from_type(cmd, kwd):
         value += line.decode() + '<br>'
     print(value)
     return value
-
-
-if __name__ == '__main__':
-    app.run(debug=True, port=80)
