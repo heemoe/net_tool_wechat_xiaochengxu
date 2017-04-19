@@ -7,17 +7,18 @@ Page({
         wx.setNavigationBarTitle({
             title: options.type
         })
-
+        const that = this
         wx.request({
-            url: 'http://127.0.0.1/api/v1.0/nettool/' + options.type + "/" + options.value, 
+            url: 'https://yourdomain.com/api/v1.0/nettool/' + options.type + "/" + options.value, 
             success: function(res) {
-                this.setData({
-                    result : res.data
+                console.log(res.data)
+                that.setData({
+                    result: res.data
                 })
             },
             fail: function() {
-                this.setData({
-                    result : "数据获取失败..."
+                that.setData({
+                    result: "数据获取失败..."
                 })
             }
         })
