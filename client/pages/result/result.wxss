@@ -3,5 +3,5 @@
 }
 .result_content_label {
     margin-top: 60px;
-    color: lightgrey;
+    font-size: 14px;
 }

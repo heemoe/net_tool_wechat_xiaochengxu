@@ -35,6 +35,6 @@ def data_from_type(cmd, kwd):
     proc = subprocess.Popen(cmds, stdout=subprocess.PIPE)
     value = ''
     for line in proc.stdout:
-        value += line.decode() + '<br>'
+        value += line.decode() + '\n'
     print(value)
     return value
