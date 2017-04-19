@@ -2,6 +2,7 @@
 //获取应用实例
 var app = getApp()
 var input_value = ""
+
 Page({
   data: {
       focus : true,
@@ -12,48 +13,48 @@ Page({
     input_value = e.detail.value;
   },
   pingBtnClick: function() {
-      if (!checkInputValue(input_value)){
+      if (!checkInputValue()){
           return
       }
       wx.navigateTo({
-      url: '../result/result?type=ping'
+      url: '../result/result?type=ping' + inputValueParameter()
     })
   },
   digBtnClick: function() {
-       if (!checkInputValue(input_value)){
+       if (!checkInputValue()){
           return
       }
     wx.navigateTo({
-      url: '../result/result?type=dig'
+      url: '../result/result?type=dig' + inputValueParameter()
     })
   },
   whoisBtnClick: function() {
-       if (!checkInputValue(input_value)){
+       if (!checkInputValue()){
           return
       }
     wx.navigateTo({
-      url: '../result/result?type=whois'
+      url: '../result/result?type=whois' + inputValueParameter()
     })
   },
   ipBtnClick: function() {
-       if (!checkInputValue(input_value)){
+       if (!checkInputValue()){
           return
       }
     wx.navigateTo({
-      url: '../result/result?type=ip'
+      url: '../result/result?type=ip' + inputValueParameter()
     })
   },
   ipv6BtnClick: function() {
-       if (!checkInputValue(input_value)){
+       if (!checkInputValue()){
           return
       }
     wx.navigateTo({
-      url: '../result/result?type=ipv6'
+      url: '../result/result?type=ipv6' + inputValueParameter()
     })
   }
 })
-function checkInputValue(value) {
-    if (!value.includes(".")){
+function checkInputValue() {
+    if (!input_value.includes(".")){
         wx.showModal({
             title: "请输入正确的URL或者IP地址!",
             showCancel: false
@@ -61,4 +62,8 @@ function checkInputValue(value) {
         return false
     }
     return true
+}
+
+function inputValueParameter(){
+  return "&value=" + input_value;
 }
