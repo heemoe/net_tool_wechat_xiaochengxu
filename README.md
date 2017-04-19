@@ -21,12 +21,19 @@ autorestart=true
 server {
     listen 80;
     server_name server_domain_or_IP;
+    return 301 https://$server_name$request_uri;
+}
+server {
+        listen 443 ssl;
+        server_name server_domain_or_IP;
+        ssl_certificate /etc/letsencrypt/live/example.com/cert.pem;
+        ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
 
-    location / {
+        location / {
         include uwsgi_params;
         uwsgi_pass unix:/home/user/myproject/myproject.sock;
     }
 }
-```
 
+```
 #### run `sh restart_service.sh`
