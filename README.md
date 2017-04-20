@@ -1,8 +1,13 @@
 # net_tool_wechat_xiaochengxu
 
+### Dependency
+#### CentOS 7.x
+#### python3.x, flask, nginx, uwsgi, supervisord
 
-ip api : http://ip-api.com/
+### IP API
+ip api : https://freegeoip.net/json/
 
+### install & configuration
 #### supervisord file :/etc/supervisord.d/nettool.ini
 ```
 [supervisord]
