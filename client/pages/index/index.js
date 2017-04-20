@@ -2,6 +2,7 @@
 //获取应用实例
 var app = getApp()
 var input_value = ""
+const baseIpUrl = "https://freegeoip.net/json/"
 
 Page({
   data: {
@@ -48,9 +49,30 @@ Page({
        if (!checkInputValue()){
           return
       }
-    wx.navigateTo({
-      url: '../result/result?type=ipv6' + inputValueParameter()
-    })
+      wx.request({
+        url: baseIpUrl + input_value, 
+        success: function(res) {
+            console.log(res)
+            if (res.statusCode != 200){
+                wx.showModal({
+                title: "请输入正确的URL或者IP地址!",
+                showCancel: false,
+                })
+            }
+            var obj = res.data
+            wx.openLocation({
+                    latitude: obj.latitude,
+                    longitude: obj.longitude,
+                    scale: 14
+                    })
+        },
+        fail: function() {
+          wx.showModal({
+            title: "请求失败!",
+            showCancel: false
+        })
+        }
+        })
   }
 })
 function checkInputValue() {

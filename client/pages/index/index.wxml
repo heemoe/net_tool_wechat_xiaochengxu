@@ -11,6 +11,6 @@
   <button class="button" type="primary" bindtap="digBtnClick">dig</button>
   <button class="button" type="primary" bindtap="whoisBtnClick">whois</button>
   <button class="button" type="primary" bindtap="ipBtnClick">ip</button>
-  <button class="button" type="primary" bindtap="ipv6BtnClick">ip-6</button>
+  <button class="button" type="primary" bindtap="ipv6BtnClick">location</button>
   </view>
 </view>

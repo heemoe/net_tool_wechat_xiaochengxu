@@ -1,0 +1,4 @@
+<view class="map_view">
+    <!--<map class="map" longitude="113.324520" latitude="23.099994" scale="14" show-location></map>-->
+    <map class="map" longitude="{{lon}}" latitude="{{lat}}" scale="14" show-location></map>
+</view>
