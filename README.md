@@ -3,11 +3,12 @@
 ### Glance
 ![screenshot](http://i.imgur.com/rAqtJ2v.jpg)
 ### Dependency
-#### CentOS 7.x
-#### python3.x, flask, nginx, uwsgi, supervisord
+    - CentOS 7.x
+    - python3.x, flask
+    - nginx, uwsgi, supervisord
 
 ### IP API
-ip api : https://freegeoip.net/json/
+    - ip api : https://freegeoip.net/json/
 
 ### install & configuration
 #### supervisord file :/etc/supervisord.d/nettool.ini
