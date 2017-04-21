@@ -11,7 +11,7 @@
     - ip api : https://freegeoip.net/json/
 
 ### install & configuration
-#### supervisord file :/etc/supervisord.d/nettool.ini
+1. supervisord file :/etc/supervisord.d/nettool.ini
 ```
 [supervisord]
 [program:nettool]
@@ -23,8 +23,8 @@ autostart=true
 autorestart=true
 ```
 
-#### you may need to comment 'server' block in /etc/nginx/nginx.conf
-#### niginx configuration file : /etc/nginx/conf.d/nettool.conf
+`you may need to comment 'server' block in /etc/nginx/nginx.conf`
+2. niginx configuration file : /etc/nginx/conf.d/nettool.conf
 ```
 server {
     listen 80;
@@ -44,4 +44,4 @@ server {
 }
 
 ```
-#### run `sh restart_service.sh`
+3. run `sh restart_service.sh`
