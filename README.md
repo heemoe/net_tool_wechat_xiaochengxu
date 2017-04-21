@@ -24,6 +24,7 @@ autorestart=true
 ```
 
 `you may need to comment 'server' block in /etc/nginx/nginx.conf`
+
 2. niginx configuration file : /etc/nginx/conf.d/nettool.conf
 ```
 server {
